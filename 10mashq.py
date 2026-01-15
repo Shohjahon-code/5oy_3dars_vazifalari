@@ -4,13 +4,13 @@ Book = namedtuple("Book", ["title","author", "pages"])
 
 
 kitob = [
-    ("Instasteller", "Buton", 100),
-    ("Shum bola", "Hoshimov", 67),
-    ("Kapalak", "Utyin", 216),
-    ("Issiq hona", "Pushkin", 6)
+    Book("Instasteller", "Buton", 100),
+    Book("Shum bola", "Hoshimov", 67),
+    Book("Kapalak", "Utyin", 216),
+    Book("Issiq hona", "Pushkin", 6)
 ]
 
 
-n = [Book(*a).pages for a in kitob]
-print(max(n))
-print(sum(n))
+maxs = max(kitob, key=lambda k: k.pages)
+sums = sum(k.pages for k in kitob)
+print(maxs,sums)

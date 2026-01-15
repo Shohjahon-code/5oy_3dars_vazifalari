@@ -15,6 +15,6 @@ odam = [
 yil = datetime.now().year
 for a in odam:
     n = Person(*a)
-    h = max(odam, key=lambda x: yil-x[2])
+    h = max(odam, key=lambda x: yil-n.birth_year)
 print(h)
    
